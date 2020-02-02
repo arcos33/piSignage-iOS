@@ -12,33 +12,55 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
     enum SectionType {
         case groupItem
     }
-    
+    var groups: [Group] = []
     let sections: [SectionType] =   [.groupItem]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupSearchController()
+        setupButtonItems()
+        configureCell()
+        configureTableView()
+        populateModels()
+    }
+    
+    private func populateModels() {
+        groups = [
+            Group(name: "Burger Joint", deployTimeStamp: "Jan 3, 5:15PM", playlistCount: 3, orientation: .landscape, resolution: .HD1080p),
+            Group(name: "Burger Joint", deployTimeStamp: "Jan 2, 2:11AM", playlistCount: 1, orientation: .landscape, resolution: .HD720p),
+            Group(name: "Mc Donald's", deployTimeStamp: "Dec 28, 1:32PM", playlistCount: 1, orientation: .portraitLeft, resolution: .HD1080p),
+            Group(name: "Burger King", deployTimeStamp: "Dec 17, 8:02PM", playlistCount: 2, orientation: .portraitLeft, resolution: .HD1080p),
+            Group(name: "Carl's Jr", deployTimeStamp: "Dec 23, 12:02PM", playlistCount: 1, orientation: .landscape, resolution: .HD720p)
+        ]
+    }
+    
+    private func setupSearchController() {
         let searchController = UISearchController()
         searchController.automaticallyShowsCancelButton = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
-        
+    }
+    
+    private func setupButtonItems() {
         let filterButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterOptions))
         let deployButtonItem = UIBarButtonItem(title: "Deploy", style: .done, target: self, action: #selector(deployOptions))
-        
         navigationItem.leftBarButtonItems = [filterButtonItem, deployButtonItem]
         
-        let newGroupButtonItem = UIBarButtonItem(title: "New group", style: .plain, target: self, action: nil)
+        let newGroupButtonItem = UIBarButtonItem(title: "New group", style: .plain, target: self, action: #selector(setupNewGroupAlert))
         
         navigationItem.rightBarButtonItem = newGroupButtonItem
-
-        configureCell()
+    }
+    
+    private func configureTableView() {
+        tableView.bounces = false
     }
     
     @objc private func filterOptions() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "Filter by category", style: .default)
         let action2 = UIAlertAction(title: "Cancel", style: .default)
+        action2.setValue(UIColor.red, forKey: "titleTextColor")
         alert.addAction(action1)
         alert.addAction(action2)
         present(alert, animated: true, completion: nil)
@@ -49,9 +71,23 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
         let action1 = UIAlertAction(title: "Deploy all", style: .default)
         let action2 = UIAlertAction(title: "Schedule deploy", style: .default)
         let action3 = UIAlertAction(title: "Cancel", style: .default)
+        action3.setValue(UIColor.red, forKey: "titleTextColor")
         alert.addAction(action1)
         alert.addAction(action2)
         alert.addAction(action3)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func setupNewGroupAlert() {
+        let alert = UIAlertController(title: nil, message: "Enter a group name", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Save", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
+        alert.addAction(okButton)
+        alert.addAction(cancelAction)
+        alert.addTextField { (textfield) in
+
+        }
         present(alert, animated: true, completion: nil)
     }
     
@@ -69,7 +105,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
         let sectionType = sections[section]
         switch sectionType {
         case .groupItem:
-            return 15
+            return groups.count
         }
     }
     
@@ -77,7 +113,9 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
         let sectionType = sections[indexPath.section]
         switch sectionType {
         case .groupItem:
-            let cell = tableView.dequeueReusableCell(withIdentifier: GroupItemTableViewCell.identifier, for: indexPath)
+            let group = groups[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupItemTableViewCell.identifier, for: indexPath) as? GroupItemTableViewCell else { return UITableViewCell() }
+            cell.configureWith(group: group)
             return cell
         }
     }
