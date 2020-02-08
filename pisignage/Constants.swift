@@ -11,5 +11,6 @@ import Foundation
 enum Constants {
     enum NIBNames: String, CaseIterable {
         case newGroup = "NewGroupViewController"
+        case groupDetails = "GroupDetailsTableViewController"
     }
 }

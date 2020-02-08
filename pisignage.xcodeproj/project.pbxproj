@@ -21,14 +21,12 @@
 		CEB3DB9C23DDF85D004B19C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB3DB9A23DDF85D004B19C7 /* LaunchScreen.storyboard */; };
 		CEB3DBA523DDF966004B19C7 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3DBA323DDF966004B19C7 /* GroupsTableViewController.swift */; };
 		CEB3DBB223DE1549004B19C7 /* UITableViewCell+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3DBB123DE1549004B19C7 /* UITableViewCell+Extras.swift */; };
-		CECA011B23E274AF00727A31 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA011923E274AF00727A31 /* NewGroupViewController.swift */; };
-		CECA011C23E274AF00727A31 /* NewGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA011A23E274AF00727A31 /* NewGroupViewController.xib */; };
 		CECA011E23E2758A00727A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA011D23E2758A00727A31 /* Constants.swift */; };
 		CECA012123E2859A00727A31 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA011F23E2859A00727A31 /* TestViewController.swift */; };
 		CECA012223E2859A00727A31 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA012023E2859A00727A31 /* TestViewController.xib */; };
 		CECA012523E4124A00727A31 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA012423E4124A00727A31 /* Group.swift */; };
-		CECA012823E67A2500727A31 /* PlaylistSchedulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA012623E67A2500727A31 /* PlaylistSchedulerViewController.swift */; };
-		CECA012923E67A2500727A31 /* PlaylistSchedulerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECA012723E67A2500727A31 /* PlaylistSchedulerViewController.xib */; };
+		CEEDCCB623EE683D008A82EB /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDCCB423EE683D008A82EB /* GroupDetailsTableViewController.swift */; };
+		CEEDCCB923EE7252008A82EB /* GroupDetailsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEDCCB823EE7252008A82EB /* GroupDetailsTableViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,14 +46,12 @@
 		CEB3DB9D23DDF85D004B19C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB3DBA323DDF966004B19C7 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		CEB3DBB123DE1549004B19C7 /* UITableViewCell+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extras.swift"; sourceTree = "<group>"; };
-		CECA011923E274AF00727A31 /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
-		CECA011A23E274AF00727A31 /* NewGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewGroupViewController.xib; sourceTree = "<group>"; };
 		CECA011D23E2758A00727A31 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CECA011F23E2859A00727A31 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CECA012023E2859A00727A31 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		CECA012423E4124A00727A31 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		CECA012623E67A2500727A31 /* PlaylistSchedulerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSchedulerViewController.swift; sourceTree = "<group>"; };
-		CECA012723E67A2500727A31 /* PlaylistSchedulerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistSchedulerViewController.xib; sourceTree = "<group>"; };
+		CEEDCCB423EE683D008A82EB /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
+		CEEDCCB823EE7252008A82EB /* GroupDetailsTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupDetailsTableViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +102,6 @@
 		CEB3DB8E23DDF85B004B19C7 /* pisignage */ = {
 			isa = PBXGroup;
 			children = (
-				CECA012A23E67A3100727A31 /* Playlist Scheduler */,
 				CECA012323E4122F00727A31 /* Models */,
 				CE7F288523DFDAD400AB2188 /* Players */,
 				CEB3DBB023DE14FB004B19C7 /* Extensions */,
@@ -126,8 +121,8 @@
 		CEB3DBA723DDF9B2004B19C7 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				CECA011923E274AF00727A31 /* NewGroupViewController.swift */,
-				CECA011A23E274AF00727A31 /* NewGroupViewController.xib */,
+				CEEDCCB823EE7252008A82EB /* GroupDetailsTableViewController.storyboard */,
+				CEEDCCB423EE683D008A82EB /* GroupDetailsTableViewController.swift */,
 				CE7F288223DFDA5D00AB2188 /* Groups.storyboard */,
 				CEB3DBA323DDF966004B19C7 /* GroupsTableViewController.swift */,
 				CE5BF77623DE1C5000E41EFF /* Cells */,
@@ -152,15 +147,6 @@
 				CECA012423E4124A00727A31 /* Group.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CECA012A23E67A3100727A31 /* Playlist Scheduler */ = {
-			isa = PBXGroup;
-			children = (
-				CECA012623E67A2500727A31 /* PlaylistSchedulerViewController.swift */,
-				CECA012723E67A2500727A31 /* PlaylistSchedulerViewController.xib */,
-			);
-			path = "Playlist Scheduler";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,9 +209,8 @@
 			files = (
 				CE7F288423DFDA5D00AB2188 /* Groups.storyboard in Resources */,
 				CEB3DB9C23DDF85D004B19C7 /* LaunchScreen.storyboard in Resources */,
-				CECA012923E67A2500727A31 /* PlaylistSchedulerViewController.xib in Resources */,
 				CE7F288C23DFDB0B00AB2188 /* Players.storyboard in Resources */,
-				CECA011C23E274AF00727A31 /* NewGroupViewController.xib in Resources */,
+				CEEDCCB923EE7252008A82EB /* GroupDetailsTableViewController.storyboard in Resources */,
 				CE7F287D23DEB8B400AB2188 /* GroupItemTableViewCell.xib in Resources */,
 				CEB3DB9923DDF85D004B19C7 /* Assets.xcassets in Resources */,
 				CECA012223E2859A00727A31 /* TestViewController.xib in Resources */,
@@ -246,12 +231,11 @@
 				CECA012523E4124A00727A31 /* Group.swift in Sources */,
 				CEB3DBB223DE1549004B19C7 /* UITableViewCell+Extras.swift in Sources */,
 				CE7F287C23DEB8B400AB2188 /* GroupItemTableViewCell.swift in Sources */,
-				CECA011B23E274AF00727A31 /* NewGroupViewController.swift in Sources */,
 				CECA011E23E2758A00727A31 /* Constants.swift in Sources */,
 				CE7F287523DEA5E600AB2188 /* UIStackView+Extras.swift in Sources */,
-				CECA012823E67A2500727A31 /* PlaylistSchedulerViewController.swift in Sources */,
 				CE7F288823DFDAF400AB2188 /* PlayersTableViewController.swift in Sources */,
 				CEB3DB9023DDF85B004B19C7 /* AppDelegate.swift in Sources */,
+				CEEDCCB623EE683D008A82EB /* GroupDetailsTableViewController.swift in Sources */,
 				CEB3DB9223DDF85B004B19C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

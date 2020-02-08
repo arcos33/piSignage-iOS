@@ -109,6 +109,12 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "GroupDetailsTableViewController", bundle: Bundle.main)
+        let navi = storyboard.instantiateViewController(identifier: "groupDetailsNavController")
+        navigationController?.present(navi, animated: true, completion: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionType = sections[indexPath.section]
         switch sectionType {
@@ -128,6 +134,8 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
             return "Available Groups"
         }
     }
+    
+    
 }
 
 //  ==============================================================================
