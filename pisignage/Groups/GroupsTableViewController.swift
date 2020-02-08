@@ -111,7 +111,8 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "GroupDetailsTableViewController", bundle: Bundle.main)
-        let navi = storyboard.instantiateViewController(identifier: "groupDetailsNavController")
+        let viewController = storyboard.instantiateViewController(identifier: "GroupDetailsTableViewController")
+        let navi = UINavigationController(rootViewController: viewController)
         navigationController?.present(navi, animated: true, completion: nil)
     }
     
